@@ -1,3 +1,70 @@
+## [1.0.6]
+
+### Anti-Unsend
+- No functional change.
+
+### Edit History
+- No functional change.
+
+### Other changes
+- Version bump to 1.0.6.
+
+### Known issues
+- None reported.
+
+## [1.0.5]
+
+### Anti-Unsend
+- No functional change.
+
+### Edit History
+- No functional change.
+  
+### Known issues
+- None reported.
+
+## [1.0.4]
+
+### Anti-Unsend
+- No functional change.
+
+### Edit History
+- No functional change.
+
+### Other changes
+- MyGram branding and package update.
+
+### Known issues
+- None reported.
+
+## [1.0.3]
+
+### Anti-Unsend
+- No functional change.
+
+### Edit History
+- No functional change.
+
+### Other changes
+- Version bump to 1.0.3.
+
+### Known issues
+- See project documentation for known limitations.
+
+## [1.0.2]
+
+### Anti-Unsend
+- Existing anti-unsend functionality.
+
+### Edit History
+- Existing local edit history functionality.
+
+### Other changes
+- Custom patch maintenance and compatibility updates.
+
+### Known issues
+- See project documentation for known limitations.
+
 # Changelog
 
 Release notes are generated from the section of the version being released
@@ -10,7 +77,7 @@ A release cannot be published without its section (`scripts/gen-release-notes.sh
 ### Anti-Unsend
 - When another user deletes ("unsends for everyone") a message you had already received, it stays in its original chat position together with its media and gets an "Unsent Message" label.
 - Reply, Forward and Share are disabled for retained messages.
-- Only server-originated deletions are affected; deleting messages yourself works exactly as before. Secret chats and your own outgoing messages are not retained.
+- Works both ways: a message you received that the sender deletes is kept, AND a message YOU sent that the other person deletes is also kept (with the same "Unsent Message" label). Only server-originated deletions are affected; deleting messages yourself works exactly as before. Secret chats and Saved Messages are not retained.
 - Self-destruct / view-once photos, videos, voice and round messages and messages with an auto-delete timer that you **received** are kept too: they are retained when the sender deletes them, and Telegram's own timer on your device no longer removes them. Your own outgoing messages and your own deletions are unaffected.
 
 ### Edit History
@@ -18,6 +85,7 @@ A release cannot be published without its section (`scripts/gen-release-notes.sh
 - "Copy" still copies only the latest text.
 
 ### Other changes
+- Patch v6: corrected CustomHistory storage queue type to DispatchQueue2.
 - Custom launcher icon generated from `tg-icon.png` at build time.
 - Independent versioning (`custom/version.properties`) instead of Telegram's version numbers.
 - Retained data is stored only in two additive tables inside the existing local Telegram database; nothing is uploaded.
